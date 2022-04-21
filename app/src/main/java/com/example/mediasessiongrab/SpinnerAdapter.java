@@ -1,6 +1,7 @@
 package com.example.mediasessiongrab;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,10 @@ public class SpinnerAdapter extends ArrayAdapter<String> {
 
     private Context ctx;
     private String[] contentArray;
-    private Integer[] imageArray;
+    private Drawable[] imageArray;
 
     public SpinnerAdapter(Context context, int resource, String[] objects,
-                          Integer[] imageArray) {
+                          Drawable[] imageArray) {
         super(context,  R.layout.spinner_value_layout, R.id.spinnerTextView, objects);
         this.ctx = context;
         this.contentArray = objects;
@@ -42,7 +43,7 @@ public class SpinnerAdapter extends ArrayAdapter<String> {
         textView.setText(contentArray[position]);
 
         ImageView imageView = (ImageView)row.findViewById(R.id.spinnerImages);
-        imageView.setImageResource(imageArray[position]);
+        imageView.setImageDrawable(imageArray[position]);
 
         return row;
     }
