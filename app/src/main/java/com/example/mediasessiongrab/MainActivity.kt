@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
             val icon: Drawable = packageManager.getApplicationIcon(session.packageName)
 
-            val txt = session.packageName
+            val txt = packageManager.getApplicationLabel(packageManager.getApplicationInfo(session.packageName, 0)).toString()
             contarr[index] = txt
             imgarr[index] = icon
             }
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         val speeen = findViewById<Spinner>(R.id.mediasessionlist)
         val inputlist = SpinnerAdapter(this, R.layout.spinner_value_layout,contarr, imgarr)
-        inputlist.setDropDownViewResource(com.google.android.material.R.layout.support_simple_spinner_dropdown_item)
+        inputlist.setDropDownViewResource(R.layout.spinner_dropdown_item)
         speeen.adapter = inputlist
 
 

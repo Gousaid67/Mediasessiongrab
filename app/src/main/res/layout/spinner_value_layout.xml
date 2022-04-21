@@ -5,19 +5,21 @@
     android:orientation="vertical">
 
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <TextView
-            android:id="@+id/spinnerTextView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        android:layout_width="204dp"
+        android:layout_height="40dp" >
 
         <ImageView
             android:id="@+id/spinnerImages"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/app_name"/>"
+
+        <TextView
+            android:id="@+id/spinnerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
 
     </TableRow>
 
