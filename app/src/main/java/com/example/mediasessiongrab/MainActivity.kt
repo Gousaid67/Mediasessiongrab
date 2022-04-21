@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.i("TAG", ContextCompat.checkSelfPermission(this, android.Manifest.permission.QUERY_ALL_PACKAGES).toString())
+        requestPermissions(arrayOf(android.Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE), 0)
 
 
         val mngr = this.getSystemService(MEDIA_SESSION_SERVICE) as MediaSessionManager
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
             val icon: Drawable = packageManager.getApplicationIcon(session.packageName)
 
-            val txt = packageManager.getApplicationLabel(packageManager.getApplicationInfo(session.packageName, 0)).toString()
+            val txt = (packageManager.getApplicationLabel(packageManager.getApplicationInfo(session.packageName, 0)).toString() + "\n(" + session.packageName + ")")
             contarr[index] = txt
             imgarr[index] = icon
             }
